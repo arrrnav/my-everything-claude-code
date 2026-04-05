@@ -1,6 +1,6 @@
 # Commands Quick Reference
 
-> 59 slash commands installed globally. Type `/` in any Claude Code session to invoke.
+> 48 slash commands. Type `/` in any Claude Code session to invoke.
 
 ---
 
@@ -24,10 +24,6 @@
 | `/tdd` | Universal TDD workflow (any language) |
 | `/e2e` | Generate + run Playwright end-to-end tests, capture screenshots/videos/traces |
 | `/test-coverage` | Report test coverage, identify gaps |
-| `/go-test` | TDD workflow for Go (table-driven, 80%+ coverage with `go test -cover`) |
-| `/kotlin-test` | TDD for Kotlin (Kotest + Kover) |
-| `/rust-test` | TDD for Rust (cargo test, integration tests) |
-| `/cpp-test` | TDD for C++ (GoogleTest + gcov/lcov) |
 
 ---
 
@@ -37,23 +33,19 @@
 |---------|-------------|
 | `/code-review` | Universal code review |
 | `/python-review` | Python — PEP 8, type hints, security, idiomatic patterns |
-| `/go-review` | Go — idiomatic patterns, concurrency safety, error handling |
-| `/kotlin-review` | Kotlin — null safety, coroutine safety, clean architecture |
-| `/rust-review` | Rust — ownership, lifetimes, unsafe usage |
-| `/cpp-review` | C++ — memory safety, modern idioms, concurrency |
+| `/santa-loop` | Adversarial dual-review — two independent reviewers must both approve before code ships |
 
 ---
 
-## Build Fixers
+## Feature Planning (PRP Workflow)
 
 | Command | What it does |
 |---------|-------------|
-| `/build-fix` | Auto-detect language and fix build errors |
-| `/go-build` | Fix Go build errors and `go vet` warnings |
-| `/kotlin-build` | Fix Kotlin/Gradle compiler errors |
-| `/rust-build` | Fix Rust build + borrow checker issues |
-| `/cpp-build` | Fix C++ CMake and linker problems |
-| `/gradle-build` | Fix Gradle errors for Android / KMP |
+| `/prp-plan` | Analyse codebase and create a comprehensive feature implementation plan |
+| `/prp-prd` | Generate a Product Requirements Document for a feature |
+| `/prp-implement` | Execute a PRP implementation plan step-by-step |
+| `/prp-commit` | Commit completed PRP work with structured commit message |
+| `/prp-pr` | Open a pull request for a completed PRP feature |
 
 ---
 
@@ -62,13 +54,15 @@
 | Command | What it does |
 |---------|-------------|
 | `/plan` | Implementation plan with risk assessment |
-| `/multi-plan` | Multi-model collaborative planning |
-| `/multi-workflow` | Multi-model collaborative development |
-| `/multi-backend` | Backend-focused multi-model development |
-| `/multi-frontend` | Frontend-focused multi-model development |
-| `/multi-execute` | Multi-model collaborative execution |
 | `/orchestrate` | Guide for tmux/worktree multi-agent orchestration |
-| `/devfleet` | Orchestrate parallel Claude Code agents via DevFleet |
+
+---
+
+## Integrations
+
+| Command | What it does |
+|---------|-------------|
+| `/jira` | Jira integration — create, update, and link issues from the terminal |
 
 ---
 
@@ -77,8 +71,8 @@
 | Command | What it does |
 |---------|-------------|
 | `/save-session` | Save current session state to `~/.claude/session-data/` |
-| `/resume-session` | Load the most recent saved session from the canonical session store and resume from where you left off |
-| `/sessions` | Browse, search, and manage session history with aliases from `~/.claude/session-data/` (with legacy reads from `~/.claude/sessions/`) |
+| `/resume-session` | Load the most recent saved session and resume from where you left off |
+| `/sessions` | Browse, search, and manage session history |
 | `/checkpoint` | Mark a checkpoint in the current session |
 | `/aside` | Answer a quick side question without losing current task context |
 | `/context-budget` | Analyse context window usage — find token overhead, optimise |
@@ -107,7 +101,8 @@
 | Command | What it does |
 |---------|-------------|
 | `/refactor-clean` | Remove dead code, consolidate duplicates, clean up structure |
-| `/prompt-optimize` | Analyse a draft prompt and output an optimised ECC-enriched version |
+| `/prompt-optimize` | Analyse a draft prompt and output an optimised version |
+| `/prune` | Delete pending instincts older than 30 days that were never promoted |
 
 ---
 
@@ -147,13 +142,15 @@
 ## Quick Decision Guide
 
 ```
-Starting a new feature?         → /plan first, then /tdd
-Code just written?              → /code-review
-Build broken?                   → /build-fix
-Need live docs?                 → /docs <library>
-Session about to end?           → /save-session or /learn-eval
-Resuming next day?              → /resume-session
-Context getting heavy?          → /context-budget then /checkpoint
-Want to extract what you learned? → /learn-eval then /evolve
-Running repeated tasks?         → /loop-start
+Starting a new feature?             → /prp-plan or /plan, then /tdd
+Code just written?                  → /code-review
+High-stakes change?                 → /santa-loop
+Build broken?                       → /build-fix
+Need live docs?                     → /docs <library>
+Session about to end?               → /save-session or /learn-eval
+Resuming next day?                  → /resume-session
+Context getting heavy?              → /context-budget then /checkpoint
+Want to extract what you learned?   → /learn-eval then /evolve
+Running repeated tasks?             → /loop-start
+Jira ticket to file?                → /jira
 ```
