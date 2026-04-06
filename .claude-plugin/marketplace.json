@@ -1,35 +1,39 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "everything-claude-code",
-  "description": "Battle-tested Claude Code configurations from an Anthropic hackathon winner — agents, skills, hooks, rules, and legacy command shims evolved over 10+ months of intensive daily use",
+  "name": "my-everything-claude-code",
+  "description": "Cropped fork of everything-claude-code focused on TypeScript, Python, and AI/ML — agents, skills, hooks, rules, and commands for modern full-stack and AI engineering workflows",
   "owner": {
-    "name": "Affaan Mustafa",
-    "email": "me@affaanmustafa.com"
+    "name": "arrrnav",
+    "email": ""
   },
   "metadata": {
-    "description": "Battle-tested Claude Code configurations from an Anthropic hackathon winner"
+    "description": "Cropped fork of everything-claude-code focused on TypeScript, Python, and AI/ML"
   },
   "plugins": [
     {
-      "name": "everything-claude-code",
+      "name": "my-everything-claude-code",
       "source": "./",
-      "description": "The most comprehensive Claude Code plugin — 36 agents, 142 skills, 68 legacy command shims, and production-ready hooks for TDD, security scanning, code review, and continuous learning",
+      "description": "20 agents, 54 skills, and commands for TypeScript, Python, and AI/ML workflows — TDD, security scanning, code review, and continuous learning",
       "version": "1.9.0",
       "author": {
-        "name": "Affaan Mustafa",
-        "email": "me@affaanmustafa.com"
+        "name": "arrrnav"
       },
-      "homepage": "https://github.com/affaan-m/everything-claude-code",
-      "repository": "https://github.com/affaan-m/everything-claude-code",
+      "homepage": "https://github.com/arrrnav/my-everything-claude-code",
+      "repository": "https://github.com/arrrnav/my-everything-claude-code",
       "license": "MIT",
       "keywords": [
         "agents",
         "skills",
         "hooks",
         "commands",
+        "typescript",
+        "python",
+        "ai",
         "tdd",
         "code-review",
         "security",
+        "workflow",
+        "automation",
         "best-practices"
       ],
       "category": "workflow",
